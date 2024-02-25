@@ -17,7 +17,11 @@ export default function IMO() {
           <a className="text-[45px] font-bold leading-none lg:max-w-full lg:text-[60px]">
             {title}
           </a>
-          <LaunchButton classname="mb-[14px]" title="WHITE PAPER" />
+          <LaunchButton
+            classname="mb-[14px]"
+            title="WHITE PAPER"
+            isVisible={true}
+          />
         </div>
         <a className="w-full max-w-[304px] whitespace-pre-wrap pb-[72px] pt-6 text-xs uppercase leading-[200%] lg:max-w-full lg:text-lg lg:leading-normal">
           {content}
