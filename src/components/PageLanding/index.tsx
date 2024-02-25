@@ -14,11 +14,12 @@ export default function Landing() {
     <div className="relative overflow-hidden">
       <LandingDesktop content={text} darkMode={darkMode} />
       <LandingMobile content={text} darkMode={darkMode} />
-      <img
+
+      {/* <img
         src={landing.src}
         alt="landing"
         className="absolute left-0 z-0 hidden w-full md:-bottom-10 md:block lg:-bottom-20"
-      />
+      /> */}
       <img
         src={landingM.src}
         alt="landingM"

@@ -27,10 +27,8 @@ export default function Mobile({
 
   return (
     <>
-      <div className="fixed z-50 w-full px-5 pt-5 lg:hidden">
-        <div
-          className={`${urlPath === "/nft" ? "hidden" : "flex"} w-full items-center justify-between self-stretch`}
-        >
+      <div className="fixed z-50 w-full px-5 pt-5 md:hidden">
+        <div className={`w-full items-center justify-between self-stretch`}>
           {darkMode ? (
             <Image
               src={logo}
@@ -77,7 +75,7 @@ export default function Mobile({
           </div>
         </div>
       </div>
-      <div className="fixed bottom-[50px] right-5 z-50 flex w-full justify-end lg:hidden">
+      <div className="fixed bottom-[50px] right-5 z-50 flex w-full justify-end md:hidden">
         <div className="z-50 flex flex-col gap-[18px] text-right">
           <div
             className={`flex h-[45px] w-[45px] cursor-pointer items-center justify-center rounded-full border pt-[2px] ${hoverTG ? "border-buttonGr shadow-buttonG" : "border-white"} bg-black transition-all`}

@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../Header/Header";
 // import LoadingPage from "../LoadingPage/LoadingPage";
 //   import Loading from "../../pages/Loading";
@@ -13,7 +13,26 @@ export default function BaseLayout({
   // const isMobile = useBreakpointValue({ base: true, lg: false });
   const urlPath = useRouter().pathname;
   const router = useRouter();
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1500);
+    setTimeout(() => {
+      setIsVisible(true);
+    }, 500);
+  }, [router]);
+
+  if (isLoading)
+    return (
+      <main
+        className={`flex min-h-[100dvh] max-w-[100vw] items-center justify-center text-black dark:text-white ${isVisible ? "opacity-0" : "opacity-100"} transition-all duration-500`}
+      >
+        Loading
+      </main>
+    );
 
   return (
     <>

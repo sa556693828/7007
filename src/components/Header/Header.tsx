@@ -13,6 +13,7 @@ export default function Header({ urlPath }: Props) {
   const openLink = (link: string) => {
     window.open(link, "_blank");
   };
+
   return (
     <header className="z-50 h-full w-full overflow-hidden text-black transition-all dark:text-white">
       <Desktop
