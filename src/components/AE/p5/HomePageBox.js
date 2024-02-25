@@ -13,6 +13,8 @@ const HomePageBox = ({ enable }) => {
                 let { Engine, Bodies, World, Mouse, MouseConstraint } = Matter;
 
                 const sketch = (p) => {
+                    let isMobile = false;
+
                     p.setup = () => {
                         p.createCanvas(window.innerWidth, window.innerHeight).parent(sketchRef.current);
                         p.background(100);
@@ -29,6 +31,7 @@ const HomePageBox = ({ enable }) => {
                             const canvasWidth = window.innerWidth;
                             const canvasHeight = window.innerHeight;
                             p.resizeCanvas(canvasWidth, canvasHeight); // 調整畫布大小
+                            isMobile = p5.prototype.touchStarted !== undefined;
                         });
                     };
                     p.mouseWheel = function (event) {
@@ -69,9 +72,20 @@ const HomePageBox = ({ enable }) => {
                         }
                     };
 
-                    p.mouseMoved = () => {
-                        generateNewBox(p.mouseX, p.mouseY);
-                    };
+                    if (isMobile) {
+                        // 如果是移动设备，使用 touchMoved 事件
+                        p.touchMoved = () => {
+                            generateNewBox(p.mouseX, p.mouseY);
+                        };
+                        p.touchStarted = () => {
+                            generateNewBox(p.mouseX, p.mouseY);
+                        };
+                    } else {
+                        // 如果是桌面设备，使用 mouseMoved 事件
+                        p.mouseMoved = () => {
+                            generateNewBox(p.mouseX, p.mouseY);
+                        };
+                    }
 
                     function generateNewBox(x, y) {
                         let sz = p.random([90, 120, 150]);
@@ -96,7 +110,7 @@ const HomePageBox = ({ enable }) => {
     }, []);
 
     return (
-        <div ref={sketchRef} className={`absolute top-0 -left-2 -z-1 ${enable ? '' : 'hidden'}`}></div>
+        <div ref={sketchRef} className={`absolute top-0 z-[5] left-0 ${enable ? '' : 'hidden'}`}></div>
     );
 };
 

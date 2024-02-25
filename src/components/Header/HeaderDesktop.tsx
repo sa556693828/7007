@@ -83,7 +83,7 @@ export default function Desktop({
         </div>
         <div className="flex flex-col gap-[18px] text-right">
           <div
-            className={`flex h-[45px] w-[45px] cursor-pointer items-center justify-center rounded-full border pt-[2px] transition-all duration-1000 ${isVisible ? "opacity-100" : "scale-50 opacity-0"} ${hoverTG ? "border-buttonGr shadow-buttonG " : "border-white"} bg-black transition-all`}
+            className={`flex h-[45px] w-[45px] cursor-pointer items-center justify-center rounded-full border pt-[2px] transition-all duration-1000 ${isVisible ? "opacity-100" : "scale-50 opacity-0"} ${hoverTG ? "border-buttonGr shadow-buttonG " : "border-white"} bg-black`}
             onMouseEnter={() => setHoverTG(true)}
             onMouseLeave={() => setHoverTG(false)}
             onClick={() => openLink(socialLink[0].link)}
@@ -91,7 +91,7 @@ export default function Desktop({
             <FaTelegramPlane size={23} color={hoverTG ? "#B4FF78" : "white"} />
           </div>
           <div
-            className={`flex h-[45px] w-[45px] cursor-pointer items-center justify-center rounded-full transition-all duration-1000 ${isVisible ? "opacity-100" : "scale-50 opacity-0"} ${hoverX ? "bg-buttonGr shadow-buttonG" : "border border-white bg-white"} transition-all`}
+            className={`flex h-[45px] w-[45px] cursor-pointer items-center justify-center rounded-full transition-all duration-1000 ${isVisible ? "opacity-100" : "scale-50 opacity-0"} ${hoverX ? "bg-buttonGr shadow-buttonG" : "border border-white bg-white"}`}
             onMouseEnter={() => setHoverX(true)}
             onMouseLeave={() => setHoverX(false)}
             onClick={() => openLink(socialLink[1].link)}

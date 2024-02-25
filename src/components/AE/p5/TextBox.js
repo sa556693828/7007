@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import Matter from 'matter-js';
 
-const TextBox = () => {
+const TextBox = ({ enable }) => {
     const sketchRef = useRef(null);
     let engine;
     let boxes = [];
@@ -14,23 +14,37 @@ const TextBox = () => {
 
                 const sketch = (p) => {
                     p.setup = () => {
-                        p.createCanvas(3000, 900);
+                        const canvasWidth = window.innerWidth;
+                        const canvasHeight = window.innerHeight;
+
+                        p.createCanvas(canvasWidth, canvasHeight).parent(sketchRef.current);
 
                         engine = Engine.create();
-                        let boxA = Bodies.rectangle(p.width / 2, 0, 15, 15);
-                        let ground1 = Bodies.rectangle(1740, 353, 668, 38, { isStatic: true });
-                        let ground2 = Bodies.rectangle(1212, 474, 500, 38, { isStatic: true });
-                        let ground3 = Bodies.rectangle(1913, 654, 324, 38, { isStatic: true });
+                        // let boxA = Bodies.rectangle(p.width / 2, 0, 15, 15);
+                        let boxA = Bodies.rectangle(canvasWidth / 2, 0, 15, 15);
+                        let ground1 = Bodies.rectangle(canvasWidth * 0.58, canvasHeight * 0.39, canvasWidth * 0.22, canvasHeight * 0.042, { isStatic: true });
+                        let ground2 = Bodies.rectangle(canvasWidth * 0.404, canvasHeight * 0.526, canvasWidth * 0.167, canvasHeight * 0.042, { isStatic: true });
+                        let ground3 = Bodies.rectangle(canvasWidth * 0.638, canvasHeight * 0.726, canvasWidth * 0.108, canvasHeight * 0.042, { isStatic: true });
 
                         World.add(engine.world, [boxA, ground1, ground2, ground3]);
 
-                        var mouse = Mouse.create(p.canvas.elt);
+                        // var mouse = Mouse.create(p.canvas.elt);
+                        var mouse = Mouse.create(sketchRef.current);
                         var mouseConstraint = MouseConstraint.create(engine, { mouse: mouse });
                         World.add(engine.world, mouseConstraint);
 
                         Matter.Runner.run(engine);
                     };
+                    p.mouseWheel = function (event) {
+                        // 取消P5画布的默认滚动行为
+                        event.preventDefault();
 
+                        // 获取滚轮事件的增量
+                        let delta = event.deltaY;
+
+                        // 调整整个网页的滚动位置
+                        window.scrollBy(0, delta);
+                    };
                     p.draw = () => {
                         p.background("#FFF");
                         for (let box of boxes) {
@@ -61,7 +75,7 @@ const TextBox = () => {
         }
     }, []);
 
-    return <div ref={sketchRef}></div>;
+    return <div ref={sketchRef} className={`absolute top-0 -left-2 -z-[1] ${enable ? '' : 'hidden'}`}></div>;
 };
 
 export default TextBox;

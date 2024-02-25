@@ -20,11 +20,11 @@ export default function Landing() {
         alt="landing"
         className="absolute left-0 z-0 hidden w-full md:-bottom-10 md:block lg:-bottom-20"
       /> */}
-      <img
+      {/* <img
         src={landingM.src}
         alt="landingM"
         className="absolute -bottom-36 left-0 z-20 block h-3/5 scale-100 object-cover md:hidden"
-      />
+      /> */}
     </div>
   );
 }
