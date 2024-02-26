@@ -13,7 +13,7 @@ const HomePageBox = ({ enable }) => {
                 let { Engine, Bodies, World, Mouse, MouseConstraint } = Matter;
 
                 const sketch = (p) => {
-                    let isMobile = false;
+                    let isMobile = window.innerWidth <= 768; // 根据屏幕宽度判断是否为移动设备
 
                     p.setup = () => {
                         p.createCanvas(window.innerWidth, window.innerHeight).parent(sketchRef.current);
@@ -28,11 +28,11 @@ const HomePageBox = ({ enable }) => {
 
                         Matter.Runner.run(engine);
                         window.addEventListener('resize', () => {
+                            isMobile = window.innerWidth <= 768;
                             const canvasWidth = window.innerWidth;
                             const canvasHeight = window.innerHeight;
                             p.resizeCanvas(canvasWidth, canvasHeight); // 調整畫布大小
                         });
-                        isMobile = p5.prototype.touchStarted !== undefined;
                     };
                     p.mouseWheel = function (event) {
                         // 取消P5画布的默认滚动行为
