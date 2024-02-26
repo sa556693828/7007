@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useLayoutEffect } from 'react';
+import React, { useRef, useEffect, } from 'react';
 import Matter from 'matter-js';
 
 const HomePageBox = ({ enable }) => {
@@ -14,13 +14,14 @@ const HomePageBox = ({ enable }) => {
 
                 const sketch = (p) => {
                     let isMobile = window.innerWidth <= 768; // 根据屏幕宽度判断是否为移动设备
+                    let allSize = window.innerWidth <= 768 ? 1 : 1.5
 
                     p.setup = () => {
                         p.createCanvas(window.innerWidth, window.innerHeight).parent(sketchRef.current);
                         p.background(100);
 
                         engine = Engine.create();
-                        let ground = Bodies.rectangle(p.width / 2, p.height + 31, p.width, 60, { isStatic: true });
+                        let ground = Bodies.rectangle(p.width / 2, p.height + 30 * allSize, p.width, 60 * allSize, { isStatic: true });
                         World.add(engine.world, ground);
                         var mouse = Mouse.create(sketchRef.current);
                         var mouseConstraint = MouseConstraint.create(engine, { mouse: mouse });
@@ -30,10 +31,10 @@ const HomePageBox = ({ enable }) => {
 
                         window.addEventListener('resize', () => {
                             isMobile = window.innerWidth <= 768;
+                            allSize = window.innerWidth <= 768 ? 1 : 1.5
                             const canvasWidth = window.innerWidth;
                             const canvasHeight = window.innerHeight;
                             p.resizeCanvas(canvasWidth, canvasHeight); // 調整畫布大小
-
                             World.clear(engine.world);
                             boxes = [];
                             // 重新创建引擎和鼠标约束
@@ -79,9 +80,9 @@ const HomePageBox = ({ enable }) => {
                                 p.fill(255);
                                 p.noStroke();
                                 p.textAlign(p.CENTER);
-                                p.textSize(12);
+                                p.textSize(12 * allSize);
                                 p.textStyle(p.BOLD);
-                                p.text(box.char, 0, 4);
+                                p.text(box.char, 0, 4 * allSize);
                             }
                             p.pop();
                         }
@@ -103,8 +104,8 @@ const HomePageBox = ({ enable }) => {
                     }
 
                     function generateNewBox(x, y) {
-                        let sz = p.random([90, 120, 150]);
-                        let boxA = Bodies?.rectangle(x, y - 10, sz, 30, { chamfer: { radius: 15 } });
+                        let sz = p.random([90, 120, 150]) * allSize
+                        let boxA = Bodies?.rectangle(x = p.mouseX, y = p.mouseY - 10 * allSize, sz, 30 * allSize, { chamfer: { radius: 15 * allSize } })
                         boxA.color = p.random(colors);
                         boxA.sz = sz;
                         boxA.char = p.random(["AI MODEL", "AIGC NFT", "EIP-7007", "ON-CHAIN", "CREATOR", "TOKENS"]);
