@@ -102,6 +102,12 @@ export default function Asset() {
             classname="hidden lg:flex min-w-[185px]"
             title="CONTACT US"
             isVisible={isVisible}
+            onClick={() => {
+              window.open(
+                "https://8ksjs0r1jhj.typeform.com/to/j2EGDUJC",
+                "_blank",
+              );
+            }}
           />
         </div>
         <Mobile isVisible={isVisible} />

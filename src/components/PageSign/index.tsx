@@ -16,7 +16,7 @@ import { NFTContext } from "../Provider";
 export default function Sign() {
   const { darkMode } = useContext(NFTContext);
 
-  const title = `Sign up\nfor\nwaitlist`;
+  const title = `Be part\nof AIGC\nRevolution`;
   const content = `Revolutionizing AI\nwith transparent,\non-chain model publishing\nand creator compensation.`;
   const paddingTopValue = `calc(100vh * 0.18)`;
   const ref = useRef<any>();
@@ -61,9 +61,15 @@ export default function Sign() {
         </a>
         <LaunchButton
           classname="mt-1 w-fit"
-          title="launch app"
+          title="Contact us"
           whiteBg={true}
           isVisible={isVisible}
+          onClick={() => {
+            window.open(
+              "https://8ksjs0r1jhj.typeform.com/to/j2EGDUJC",
+              "_blank",
+            );
+          }}
         />
       </div>
       {darkMode ? (
