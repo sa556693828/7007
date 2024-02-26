@@ -78,58 +78,58 @@ export default function Create() {
     {
       pic: ai,
       alt: "ai",
-      before: "bottom-[40%] left-[40%] z-10 rotate-90",
-      after: "bottom-[20%] left-[42%] rotate-0 z-10",
-      width: 170,
+      before: "top-[40%] right-[40%] z-10 rotate-90",
+      after: "top-[40%] -right-[2%] rotate-0 z-10",
+      width: 90,
     },
     {
       pic: art,
       alt: "art",
-      before: "top-[40%] left-[20%] z-10 rotate-[100deg]",
-      after: "top-[38%] left-[7%] z-10 rotate-0",
-      width: 182,
+      before: "bottom-[42%] left-[15%] z-10 rotate-[90deg]",
+      after: "bottom-[38%] -left-[4%] z-10 rotate-0",
+      width: 95,
     },
     {
       pic: creat,
       alt: "creat",
-      before: "top-[30%] left-[31%] rotate-[120deg]",
-      after: "top-[21%] left-[25%] rotate-0",
-      width: 269,
+      before: "top-[38%] left-[10%] rotate-[0deg]",
+      after: "top-[30%] -left-[4%] rotate-0",
+      width: 155,
     },
     {
       pic: idea,
       alt: "idea",
-      before: "top-[32%] right-[44%] rotate-90",
-      after: "top-[24%] right-[38%] rotate-0",
-      width: 160,
+      before: "top-[34%] left-[44%] rotate-90",
+      after: "top-[33%] left-[35%] rotate-0",
+      width: 83,
     },
     {
       pic: model,
       alt: "model",
-      before: "top-[30%] right-[20%] -rotate-[50deg]",
-      after: "top-[22%] right-[8%] rotate-0",
-      width: 415,
+      before: "top-[40%] right-[10%] -rotate-[50deg]",
+      after: "top-[26%] -right-[4%] rotate-0",
+      width: 214,
     },
     {
       pic: NFT,
       alt: "NFT",
-      before: "bottom-[43%] right-[20%] rotate-[220deg]",
-      after: "bottom-[31%] right-[10%] rotate-0",
-      width: 174,
+      before: "bottom-[43%] right-[17%] rotate-[70deg]",
+      after: "bottom-[33%] right-[0%] rotate-0",
+      width: 90,
     },
     {
       pic: ownership,
       alt: "ownership",
-      before: "bottom-[40%] left-[23%] rotate-[65deg]",
-      after: "bottom-[26%] left-[15%] rotate-0",
-      width: 351,
+      before: "bottom-[40%] z-10 left-[17%] rotate-[200deg]",
+      after: "bottom-[32%] z-10 left-[13%] rotate-0",
+      width: 181,
     },
     {
       pic: tokens,
       alt: "tokens",
       before: "bottom-[42%] right-[32%] -rotate-[70deg]",
-      after: "bottom-[22%] right-[27%] rotate-0",
-      width: 174,
+      after: "bottom-[30%] right-[24%] rotate-0",
+      width: 90,
     },
   ];
 
@@ -138,7 +138,7 @@ export default function Create() {
     const handleScroll = () => {
       if (!component) return;
       const componentBottom = component.offsetTop + component.clientHeight;
-      const componentHalf = component.offsetTop + component.clientHeight * 0.5;
+      const componentHalf = component.offsetTop + component.clientHeight * 0.8;
       const scrollPosition = window.scrollY + window.innerHeight;
       const isBottom = scrollPosition >= componentBottom;
       const isHalf = scrollPosition >= componentHalf;
@@ -162,7 +162,7 @@ export default function Create() {
   return (
     <div
       ref={ref}
-      className="relative z-20 flex min-h-[100dvh] w-full flex-col items-center justify-center bg-white dark:bg-bgGrey"
+      className="relative z-20 flex min-h-[100dvh] w-full flex-col items-center justify-center overflow-hidden bg-white dark:bg-bgGrey"
     >
       <div
         className={`flex w-full flex-col items-center justify-center transition-all duration-[800ms] ${isScrolledToBottom ? "opacity-100" : "opacity-0"}`}
@@ -184,7 +184,7 @@ export default function Create() {
           alt={img.alt}
         />
       ))}
-      {/* {imgArrayM.map((img, index) => (
+      {imgArrayM.map((img, index) => (
         <AnimateImg
           key={index}
           width={img.width ? img.width : 150}
@@ -193,15 +193,15 @@ export default function Create() {
           pic={img.pic}
           alt={img.alt}
         />
-      ))} */}
+      ))}
 
-      <Image
+      {/* <Image
         src={M_createFull}
         alt="createFull"
         width={448}
         height={368}
         className="absolute top-[45%] block -translate-y-[45%] lg:hidden"
-      />
+      /> */}
     </div>
   );
 }
