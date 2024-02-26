@@ -64,13 +64,16 @@ export default function Mobile({ darkMode, socialLink, openLink }: Props) {
             />
           )}
           <div
-            className={`fixed right-0 top-0 z-30 flex h-full w-full justify-center bg-black/70 px-10 pt-[120px] text-white transition-all duration-200 ease-linear ${
-              showMenu ? "" : "translate-x-full"
+            className={`fixed right-0 top-0 z-30 flex h-full w-full justify-center bg-black/70 px-10 pt-[120px] text-white transition-all duration-500 ease-linear ${
+              showMenu ? "" : "-translate-y-full"
             }`}
           >
             <div className="flex h-full w-fit flex-col gap-[18px]">
               {footerList.map((item, index) => (
-                <a key={index} className="text-2xl uppercase leading-[150%]">
+                <a
+                  key={index}
+                  className={`text-2xl uppercase leading-[150%] transition-all delay-700 duration-[800ms] ${showMenu ? "opacity-100" : "-translate-y-5 opacity-0"}`}
+                >
                   {item.name}
                 </a>
               ))}

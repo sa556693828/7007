@@ -1,155 +1,146 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import eth from "@/assets/PageTeam/eth.svg";
 import hyper from "@/assets/PageTeam/hyper.svg";
 import story from "@/assets/PageTeam/story.svg";
 import stratos from "@/assets/PageTeam/stratos.svg";
-import zero from "@/assets/PageTeam/zero.svg";
-import seven from "@/assets/PageTeam/seven.svg";
 import eth_W from "@/assets/PageTeam/eth_W.svg";
 import hyper_W from "@/assets/PageTeam/hyper_W.svg";
 import story_W from "@/assets/PageTeam/story_W.svg";
 import stratos_W from "@/assets/PageTeam/stratos_W.svg";
-import zero_W from "@/assets/PageTeam/zero_W.svg";
-import seven_W from "@/assets/PageTeam/seven_W.svg";
 import Image from "next/image";
 import { teamMember as team } from "@/constants/menuList";
 import { NFTContext } from "../Provider";
+import ShowMemberM from "./ShowMemberM";
+import ShowMember from "./ShowMember";
+import Selector from "./Selector";
 type teamMember = (typeof team)[number]["id"];
 
 export default function Team() {
-  const [select, setSelect] = useState<teamMember>("CEO");
-  const title = `Team`;
   const { darkMode } = useContext(NFTContext);
+  const ref = useRef<any>();
+  const [select, setSelect] = useState<teamMember>("");
+  const [isVisible, setIsVisible] = useState(false);
+  const title = `Team`;
+  const paddingTopValue = `calc(100vh * 0.18)`;
 
+  useEffect(() => {
+    const component = ref.current;
+    const handleScroll = () => {
+      if (!component) return;
+      const componentBottom = component.offsetTop + component.clientHeight;
+      const componentHalf = component.offsetTop + component.clientHeight / 2;
+      const scrollPosition = window.scrollY + window.innerHeight;
+      const isHalf = scrollPosition >= componentHalf;
+      const isBottom = scrollPosition >= componentBottom;
+      setIsVisible(isHalf);
+      // setIsBottom(isBottom);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
     <>
-      <div className="z-20 flex h-full min-h-[100dvh] w-full bg-bgWhite px-10 pb-[8%] pt-[150px] lg:gap-[5%] lg:pl-[14%] lg:pt-[180px] dark:bg-black">
+      <div
+        ref={ref}
+        className="z-20 flex h-full min-h-[100dvh] w-full bg-bgWhite px-10 pb-[8%] dark:bg-black lg:gap-[5%] lg:pl-[12%]"
+        style={{ paddingTop: paddingTopValue }}
+      >
         <div className="flex w-full flex-col lg:w-fit lg:gap-[100px]">
           <div className="flex flex-col gap-6 lg:gap-[45px]">
-            <a className="text-[45px] font-bold leading-none lg:max-w-full lg:text-[60px]">
+            <a
+              className={`text-[45px] font-bold leading-none transition-all duration-[800ms] lg:max-w-full lg:text-[60px] ${isVisible ? "opacity-100" : "-translate-y-10 opacity-0"}`}
+            >
               {title}
             </a>
-            <div className="flex flex-col gap-[15px] lg:max-w-2xl lg:flex-row lg:flex-wrap">
-              {team.map((member) => (
-                <button
-                  className={`w-fit rounded-[30px] border-2 px-7 py-2 border-[${member.color}] ${
-                    select === member.id
-                      ? `bg-[${team.find((member) => member.id === select)?.color}] text-black`
-                      : `bg-black text-[${member.color}]`
-                  } transition-all duration-300 hover:bg-[${member.color}] hover:text-black hover:border-[${member.color}]`}
-                  key={member.id}
-                  onClick={() => setSelect(member.id)}
-                >
-                  <a className="text-[20px] font-bold">{member.name}</a>
-                </button>
-              ))}
-            </div>
+            <Selector
+              selected={select}
+              setSelect={setSelect}
+              isVisible={isVisible}
+            />
           </div>
-          <div className="mb-[100px] mt-[52px] flex w-full flex-col items-center justify-center gap-[25px] lg:hidden">
-            {/* <div
-              className={`flex h-[270px] w-[270px] items-center justify-center border-2 border-[${
-                team.find((member) => member.id === select)?.color
-              }] rounded-[50%]`}
-            >
-              <div
-                className={`flex h-[230px] w-[230px] bg-[${
-                  team.find((member) => member.id === select)?.color
-                }] items-center justify-center rounded-[50%] border-2 border-white`}
-              >
-                <a className="pt-8 align-bottom text-[150px] leading-none">
-                  {team
-                    .find((member) => member.id === select)
-                    ?.name.slice(0, 2)}
-                </a>
-              </div>
-            </div>
-            <div
-              className={`flex w-full items-center justify-center border-2 text-lg font-bold border-[${
-                team.find((member) => member.id === select)?.color
-              }] rounded-[65px] py-3`}
-            >
-              {team.find((member) => member.id === select)?.name.slice(3)}
-            </div> */}
-          </div>
+          <ShowMemberM selected={select} />
           <div className="flex flex-col gap-[28px]">
-            <a className="text-[45px] font-bold leading-none lg:max-w-full lg:text-[60px]">
+            <a
+              className={`text-[45px] font-bold leading-none transition-all duration-[800ms] lg:max-w-full lg:text-[60px] ${isVisible ? "opacity-100" : "-translate-y-10 opacity-0"}`}
+            >
               partner
             </a>
             <div className="mb-3 flex flex-col gap-10 lg:mb-0 lg:flex-row">
               {darkMode ? (
                 <>
-                  <Image src={story} alt="story" width={150} height={50} />
-                  <Image src={eth} alt="eth" width={150} height={50} />
-                  <Image src={hyper} alt="hyper" width={150} height={50} />
+                  <Image
+                    src={story}
+                    alt="story"
+                    width={150}
+                    height={50}
+                    className={`transition-all delay-700 duration-[800ms] ${isVisible ? "opacity-100" : "scale-50 opacity-0"}`}
+                  />
+                  <Image
+                    src={eth}
+                    alt="eth"
+                    width={150}
+                    height={50}
+                    className={`transition-all delay-700 duration-[800ms] ${isVisible ? "opacity-100" : "scale-50 opacity-0"}`}
+                  />
+                  <Image
+                    src={hyper}
+                    alt="hyper"
+                    width={150}
+                    height={50}
+                    className={`transition-all delay-700 duration-[800ms] ${isVisible ? "opacity-100" : "scale-50 opacity-0"}`}
+                  />
                 </>
               ) : (
                 <>
-                  <Image src={story_W} alt="story" width={150} height={50} />
-                  <Image src={eth_W} alt="eth" width={150} height={50} />
-                  <Image src={hyper_W} alt="hyper" width={150} height={50} />
+                  <Image
+                    src={story_W}
+                    alt="story"
+                    width={150}
+                    height={50}
+                    className={`transition-all delay-700 duration-[800ms] ${isVisible ? "opacity-100" : "scale-50 opacity-0"}`}
+                  />
+                  <Image
+                    src={eth_W}
+                    alt="eth"
+                    width={150}
+                    height={50}
+                    className={`transition-all delay-700 duration-[800ms] ${isVisible ? "opacity-100" : "scale-50 opacity-0"}`}
+                  />
+                  <Image
+                    src={hyper_W}
+                    alt="hyper"
+                    width={150}
+                    height={50}
+                    className={`transition-all delay-700 duration-[800ms] ${isVisible ? "opacity-100" : "scale-50 opacity-0"}`}
+                  />
                 </>
               )}
             </div>
             {darkMode ? (
-              <Image src={stratos} alt="stratos" width={150} height={50} />
+              <Image
+                src={stratos}
+                alt="stratos"
+                width={150}
+                height={50}
+                className={`transition-all delay-700 duration-[800ms] ${isVisible ? "opacity-100" : "scale-50 opacity-0"}`}
+              />
             ) : (
-              <Image src={stratos_W} alt="stratos" width={240} height={50} />
+              <Image
+                src={stratos_W}
+                alt="stratos"
+                width={240}
+                height={50}
+                className={`transition-all delay-700 duration-[800ms] ${isVisible ? "opacity-100" : "scale-50 opacity-0"}`}
+              />
             )}
           </div>
         </div>
-        <div className="hidden flex-col gap-6 pt-1 lg:flex">
-          {darkMode ? (
-            <>
-              <Image src={seven} alt="seven" width={107} height={112} />
-              <Image src={zero} alt="zero" width={107} height={112} />
-              <Image src={zero} alt="zero" width={107} height={112} />
-              <Image src={seven} alt="seven" width={107} height={112} />
-            </>
-          ) : (
-            <>
-              <Image src={seven_W} alt="seven" width={107} height={112} />
-              <Image src={zero_W} alt="zero" width={107} height={112} />
-              <Image src={zero_W} alt="zero" width={107} height={112} />
-              <Image src={seven_W} alt="seven" width={107} height={112} />
-            </>
-          )}
+        <div className="hidden flex-col pt-1 lg:flex">
+          <ShowMember selected={select} isVisible={isVisible} />
         </div>
       </div>
     </>
   );
 }
-// border-[#FF974C]
-// hover:border-[#FF974C]
-// hover:bg-[#FF974C]
-// bg-[#FF974C]
-// text-[#FF974C]
-// border-[#FFF]
-// hover:border-[#FFF]
-// hover:bg-[#FFF]
-// bg-[#FFF]
-// text-[#FFF]
-// border-[#8550F6]
-// hover:border-[#8550F6]
-// hover:bg-[#8550F6]
-// bg-[#8550F6]
-// text-[#8550F6]
-// border-[#2B8BFC]
-// hover:border-[#2B8BFC]
-// hover:bg-[#2B8BFC]
-// bg-[#2B8BFC]
-// text-[#2B8BFC]
-// border-[#F97ACE]
-// hover:border-[#F97ACE]
-// hover:bg-[#F97ACE]
-// bg-[#F97ACE]
-// text-[#F97ACE]
-// border-[#0FE5F2]
-// hover:border-[#0FE5F2]
-// hover:bg-[#0FE5F2]
-// bg-[#0FE5F2]
-// text-[#0FE5F2]
-// border-[#83F04F]
-// hover:border-[#83F04F]
-// hover:bg-[#83F04F]
-// bg-[#83F04F]
-// text-[#83F04F]

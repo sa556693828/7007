@@ -5,10 +5,10 @@ import color from "@/assets/PageAsset/color.svg";
 import LaunchButton from "../Button/LaunchButton";
 
 interface Props {
-  title?: string;
+  isVisible: boolean;
 }
 
-export default function Mobile({ title }: Props) {
+export default function Mobile({ isVisible }: Props) {
   return (
     <>
       <div className="relative mb-[60px] mt-[18px] flex w-full lg:hidden">
@@ -17,14 +17,14 @@ export default function Mobile({ title }: Props) {
           width={283}
           height={125}
           alt="colorPart"
-          className="img"
+          className={`img transition-all duration-[800ms] ${isVisible ? "opacity-100" : "translate-x-10 opacity-0"}`}
         />
         <Image
           src={black}
           width={310}
           height={72}
           alt="blackPart"
-          className="absolute left-0 top-[26.32px]"
+          className={`absolute left-0 top-[26.32px] transition-all delay-700 duration-[800ms] ${isVisible ? "opacity-100" : "translate-x-10 opacity-0"}`}
         />
       </div>
       <LaunchButton classname="lg:hidden" title="CONTACT US" isVisible={true} />

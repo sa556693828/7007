@@ -22,7 +22,7 @@ export default function AnimateImg({
       alt={alt ? alt : "animateImg"}
       width={width}
       height={height}
-      className={`absolute hidden transition-all duration-700 lg:block ${classname}`}
+      className={`absolute hidden transition-all duration-[800ms] lg:block ${classname}`}
     />
   );
 }

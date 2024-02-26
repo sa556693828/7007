@@ -8,8 +8,14 @@ interface Prop {
   classname?: string;
   title?: string;
   isVisible?: boolean;
+  whiteBg?: boolean;
 }
-export default function LaunchButton({ classname, title, isVisible }: Prop) {
+export default function LaunchButton({
+  classname,
+  title,
+  isVisible,
+  whiteBg = false,
+}: Prop) {
   const { darkMode } = useContext(NFTContext);
   const [hover, setHover] = useState(false);
   return (
@@ -19,10 +25,10 @@ export default function LaunchButton({ classname, title, isVisible }: Prop) {
       onMouseLeave={() => setHover(false)}
     >
       <div
-        className={`absolute right-0 z-50 h-[22px] bg-bgWhite transition-all duration-1000 ${isVisible ? "w-0" : "w-64"}`}
+        className={`absolute right-0 z-50 h-[22px] transition-all delay-200 duration-1000 ${whiteBg ? "bg-white" : "bg-bgWhite"} ${isVisible ? "w-0" : "w-64"}`}
       />
       <div
-        className={`absolute right-0 h-full bg-black transition-all duration-500 dark:bg-white ${hover ? "w-1" : "w-full"}`}
+        className={`absolute right-0 h-full bg-black transition-all duration-[800ms] dark:bg-white ${hover ? "w-1" : "w-full"}`}
       />
       <a className="z-30 text-xs leading-6 lg:text-lg">{title}</a>
       {darkMode ? (

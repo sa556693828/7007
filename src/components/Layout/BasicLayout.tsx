@@ -28,7 +28,7 @@ export default function BaseLayout({
   if (isLoading)
     return (
       <main
-        className={`flex min-h-[100dvh] max-w-[100vw] items-center justify-center text-black dark:text-white ${isVisible ? "opacity-0" : "opacity-100"} transition-all duration-500`}
+        className={`flex min-h-[100dvh] max-w-[100vw] items-center justify-center text-black dark:text-white ${isVisible ? "opacity-0" : "opacity-100"} transition-all duration-[800ms]`}
       >
         Loading
       </main>

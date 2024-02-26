@@ -31,7 +31,7 @@ export default function Create() {
       pic: art,
       alt: "art",
       before: "top-[40%] left-[20%] z-10 rotate-[100deg]",
-      after: "top-[38%] left-[10%] z-10 rotate-0",
+      after: "top-[38%] left-[7%] z-10 rotate-0",
       width: 182,
     },
     {
@@ -83,7 +83,7 @@ export default function Create() {
     const handleScroll = () => {
       if (!component) return;
       const componentBottom = component.offsetTop + component.clientHeight;
-      const componentHalf = component.offsetTop + component.clientHeight - 50;
+      const componentHalf = component.offsetTop + component.clientHeight / 2;
       const scrollPosition = window.scrollY + window.innerHeight;
       const isBottom = scrollPosition >= componentBottom;
       const isHalf = scrollPosition >= componentHalf;
@@ -110,7 +110,7 @@ export default function Create() {
       className="relative z-20 flex min-h-[100dvh] w-full flex-col items-center justify-center bg-white dark:bg-bgGrey"
     >
       <div
-        className={`flex w-full flex-col items-center justify-center transition-all duration-700 ${isScrolledToBottom ? "opacity-100" : "opacity-0"}`}
+        className={`flex w-full flex-col items-center justify-center transition-all duration-[800ms] ${isScrolledToBottom ? "opacity-100" : "opacity-0"}`}
       >
         <a className="max-w-xs text-center text-[45px] font-bold lg:max-w-full lg:text-[60px]">
           {title}
