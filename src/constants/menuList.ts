@@ -10,15 +10,15 @@ export const menuList = [
   { id: "#Partner", name: "Partner" },
 ];
 export const footerList = [
-  { id: "MarketPlace", name: "🚀 ai marketplace" },
+  { id: "LaunchApp", name: "🚀 launch app" },
   { id: "X", name: "🌏 x" },
-  { id: "Discord", name: "👾 discord" },
+  { id: "Telegram", name: "👾 Telegram" },
   { id: "Contact", name: "🗿 contact" },
   { id: "Contract", name: "⛽ smart contract" },
-  { id: "whitePaper", name: "🩻 white paper" },
+  // { id: "whitePaper", name: "🩻 white paper" },
   { id: "About", name: "🐳 about" },
   { id: "Products", name: "🌵 products" },
-  { id: "IMO", name: "⛲ imo" },
+  // { id: "IMO", name: "⛲ imo" },
 ];
 export const teamMember = [
   {

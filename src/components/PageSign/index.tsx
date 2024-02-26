@@ -45,12 +45,12 @@ export default function Sign() {
   return (
     <div
       ref={ref}
-      className="z-20 flex h-full min-h-[100dvh] w-full flex-col items-center gap-[5%] overflow-hidden bg-white dark:bg-bgGrey lg:min-h-[100dvh] lg:flex-row lg:items-start lg:pl-[12%]"
+      className="z-20 flex h-full min-h-[100dvh] w-full flex-col items-center gap-[5%] overflow-hidden bg-white pb-[8%] dark:bg-bgGrey lg:min-h-[100dvh] lg:flex-row lg:items-start lg:pl-[12%]"
       style={{ paddingTop: paddingTopValue }}
     >
       <div className="flex flex-col gap-6 whitespace-pre-wrap">
         <a
-          className={`text-[45px] font-bold leading-none transition-all duration-[800ms] lg:max-w-full lg:text-[60px] ${isVisible ? "opacity-100" : "-translate-y-10 opacity-0"}`}
+          className={`text-[35px] font-bold leading-none transition-all duration-[800ms] lg:max-w-full lg:text-[60px] ${isVisible ? "opacity-100" : "-translate-y-10 opacity-0"}`}
         >
           {title}
         </a>
