@@ -27,12 +27,27 @@ const HomePageBox = ({ enable }) => {
                         World.add(engine.world, mouseConstraint);
 
                         Matter.Runner.run(engine);
+
                         window.addEventListener('resize', () => {
                             isMobile = window.innerWidth <= 768;
                             const canvasWidth = window.innerWidth;
                             const canvasHeight = window.innerHeight;
                             p.resizeCanvas(canvasWidth, canvasHeight); // 調整畫布大小
+
+                            World.clear(engine.world);
+                            boxes = [];
+                            // 重新创建引擎和鼠标约束
+                            engine = Engine.create();
+                            let ground = Bodies.rectangle(p.width / 2, p.height + 31, p.width, 60, { isStatic: true });
+                            World.add(engine.world, ground);
+                            var mouse = Mouse.create(sketchRef.current);
+                            var mouseConstraint = MouseConstraint.create(engine, { mouse: mouse });
+                            World.add(engine.world, mouseConstraint);
+
+                            // 重新运行引擎
+                            Matter.Runner.run(engine);
                         });
+
                     };
                     p.mouseWheel = function (event) {
                         // 取消P5画布的默认滚动行为

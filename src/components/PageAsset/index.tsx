@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import Desktop from "./Desktop";
 import Mobile from "./Mobile";
 import Image from "next/image";
 import LaunchButton from "../Button/LaunchButton";
@@ -85,7 +84,7 @@ export default function Asset() {
       <div
         ref={ref}
         id="asset"
-        className="z-20 flex h-fit min-h-[100dvh] w-full flex-col items-start bg-bgWhite pl-10 dark:bg-black lg:pl-[12%]"
+        className="z-20 flex h-fit min-h-[100dvh] w-full flex-col items-start overflow-hidden bg-bgWhite pl-10 dark:bg-black lg:pl-[12%]"
         style={{ paddingTop: paddingTopValue }}
       >
         <div className="relative flex max-w-[791px] items-start whitespace-pre-wrap">

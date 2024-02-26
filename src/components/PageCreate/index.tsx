@@ -1,7 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import Desktop from "./Desktop";
-import Mobile from "./Mobile";
-import createFull from "@/assets/PageCreate/createFull.svg";
 import M_createFull from "@/assets/PageCreate/M_createFull.svg";
 import ai from "@/assets/PageCreate/ai.svg";
 import art from "@/assets/PageCreate/art.svg";
@@ -77,13 +74,71 @@ export default function Create() {
       width: 174,
     },
   ];
+  const imgArrayM = [
+    {
+      pic: ai,
+      alt: "ai",
+      before: "bottom-[40%] left-[40%] z-10 rotate-90",
+      after: "bottom-[20%] left-[42%] rotate-0 z-10",
+      width: 170,
+    },
+    {
+      pic: art,
+      alt: "art",
+      before: "top-[40%] left-[20%] z-10 rotate-[100deg]",
+      after: "top-[38%] left-[7%] z-10 rotate-0",
+      width: 182,
+    },
+    {
+      pic: creat,
+      alt: "creat",
+      before: "top-[30%] left-[31%] rotate-[120deg]",
+      after: "top-[21%] left-[25%] rotate-0",
+      width: 269,
+    },
+    {
+      pic: idea,
+      alt: "idea",
+      before: "top-[32%] right-[44%] rotate-90",
+      after: "top-[24%] right-[38%] rotate-0",
+      width: 160,
+    },
+    {
+      pic: model,
+      alt: "model",
+      before: "top-[30%] right-[20%] -rotate-[50deg]",
+      after: "top-[22%] right-[8%] rotate-0",
+      width: 415,
+    },
+    {
+      pic: NFT,
+      alt: "NFT",
+      before: "bottom-[43%] right-[20%] rotate-[220deg]",
+      after: "bottom-[31%] right-[10%] rotate-0",
+      width: 174,
+    },
+    {
+      pic: ownership,
+      alt: "ownership",
+      before: "bottom-[40%] left-[23%] rotate-[65deg]",
+      after: "bottom-[26%] left-[15%] rotate-0",
+      width: 351,
+    },
+    {
+      pic: tokens,
+      alt: "tokens",
+      before: "bottom-[42%] right-[32%] -rotate-[70deg]",
+      after: "bottom-[22%] right-[27%] rotate-0",
+      width: 174,
+    },
+  ];
 
   useEffect(() => {
     const component = ref.current;
     const handleScroll = () => {
       if (!component) return;
       const componentBottom = component.offsetTop + component.clientHeight;
-      const componentHalf = component.offsetTop + component.clientHeight / 2;
+      const componentHalf = component.offsetTop + component.clientHeight * 0.5;
       const scrollPosition = window.scrollY + window.innerHeight;
       const isBottom = scrollPosition >= componentBottom;
       const isHalf = scrollPosition >= componentHalf;
@@ -124,18 +179,22 @@ export default function Create() {
           key={index}
           width={img.width ? img.width : 150}
           height={150}
-          classname={`${isScrolledToBottom ? img.after : img.before}`}
+          classname={`hidden lg:block ${isScrolledToBottom ? img.after : img.before}`}
           pic={img.pic}
           alt={img.alt}
         />
       ))}
-      {/* <Image
-        src={createFull}
-        alt="createFull"
-        width={1200}  
-        height={600}
-        className="absolute top-[55.5%] hidden -translate-y-[55.5%] lg:block"
-      /> */}
+      {/* {imgArrayM.map((img, index) => (
+        <AnimateImg
+          key={index}
+          width={img.width ? img.width : 150}
+          height={150}
+          classname={`lg:hidden block ${isScrolledToBottom ? img.after : img.before}`}
+          pic={img.pic}
+          alt={img.alt}
+        />
+      ))} */}
+
       <Image
         src={M_createFull}
         alt="createFull"
