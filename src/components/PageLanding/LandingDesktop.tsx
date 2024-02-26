@@ -26,7 +26,7 @@ export default function LandingDesktop({ content, darkMode }: Props) {
   }, []);
 
   return (
-    <div className="z-20 hidden min-h-[100dvh] w-full flex-col items-center gap-[50px] bg-bgWhite pr-44 pt-[250px] dark:bg-black md:flex">
+    <div className="z-20 hidden min-h-[100vh] w-full flex-col items-center gap-[50px] bg-bgWhite pr-44 pt-[250px] dark:bg-black md:flex">
       <div className="pointer-events-none relative z-10 h-[128px] w-[576px]">
         {darkMode ? (
           <>

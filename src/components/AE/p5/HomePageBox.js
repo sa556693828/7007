@@ -31,8 +31,8 @@ const HomePageBox = ({ enable }) => {
                             const canvasWidth = window.innerWidth;
                             const canvasHeight = window.innerHeight;
                             p.resizeCanvas(canvasWidth, canvasHeight); // 調整畫布大小
-                            isMobile = p5.prototype.touchStarted !== undefined;
                         });
+                        isMobile = p5.prototype.touchStarted !== undefined;
                     };
                     p.mouseWheel = function (event) {
                         // 取消P5画布的默认滚动行为

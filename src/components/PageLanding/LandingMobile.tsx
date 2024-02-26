@@ -24,7 +24,7 @@ export default function LandingMobile({ content, darkMode }: Props) {
   }, []);
 
   return (
-    <div className="relative flex h-[100dvh] flex-col items-center overflow-hidden bg-bgWhite transition-all dark:bg-black md:hidden">
+    <div className="relative flex h-[100vh] flex-col items-center overflow-hidden bg-bgWhite transition-all dark:bg-black md:hidden">
       <div className="absolute top-[27%] z-20 flex w-full flex-col items-center gap-6">
         {darkMode ? (
           <div className="relative">
