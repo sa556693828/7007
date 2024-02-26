@@ -77,7 +77,7 @@ export default function Text() {
             className={`pointer-events-none z-20 hidden transition-all duration-[800ms] lg:block lg:w-[65%] xl:w-[73%] ${isVisible ? "opacity-100" : "opacity-0"}`}
           />
         )}
-        <TextBox enable={true} />
+        {/* <TextBox enable={enableP5} /> */}
       </div>
     </>
   );

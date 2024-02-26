@@ -74,7 +74,7 @@ const TextBox = ({ enable }) => {
                         window.scrollBy(0, delta);
                     };
                     p.draw = () => {
-                        p.background("#FFF");
+                        p.background("#D9D9D9");
                         for (let box of boxes) {
                             p.fill(box.color || "white");
                             p.stroke(255);
