@@ -21,7 +21,7 @@ export default function Home() {
       <Asset />
       <Text />
       <Grid />
-      <IMO />
+      {/* <IMO /> */}
       <Team />
       <Sign />
     </>

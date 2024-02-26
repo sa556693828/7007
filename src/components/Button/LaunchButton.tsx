@@ -9,12 +9,14 @@ interface Prop {
   title?: string;
   isVisible?: boolean;
   whiteBg?: boolean;
+  onClick?: () => void;
 }
 export default function LaunchButton({
   classname,
   title,
   isVisible,
   whiteBg = false,
+  onClick,
 }: Prop) {
   const { darkMode } = useContext(NFTContext);
   const [hover, setHover] = useState(false);
@@ -23,6 +25,7 @@ export default function LaunchButton({
       className={`relative z-20 flex h-[22px] cursor-pointer items-center gap-[6px] px-2 transition-all duration-1000 ${hover ? "text-black dark:text-white" : "text-white dark:text-black"} ${isVisible ? "opacity-100" : "opacity-0"} ${classname}`}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
+      onClick={onClick}
     >
       <div
         className={`absolute right-0 z-50 h-[22px] transition-all delay-200 duration-1000 ${whiteBg ? "bg-white" : "bg-bgWhite"} ${isVisible ? "w-0" : "w-64"}`}

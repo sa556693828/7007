@@ -9,9 +9,10 @@ import HomePageBox from "@/components/AE/p5/HomePageBox";
 interface Props {
   content: string;
   darkMode: boolean;
+  openLink: (link: string) => void;
 }
 
-export default function LandingDesktop({ content, darkMode }: Props) {
+export default function LandingDesktop({ content, darkMode, openLink }: Props) {
   const { toggleDarkMode } = useContext(NFTContext);
   const [isVisible, setIsVisible] = useState(false);
   const [enableP5, setEnableP5] = useState(false);
@@ -70,7 +71,11 @@ export default function LandingDesktop({ content, darkMode }: Props) {
         >
           {content}
         </a>
-        <LaunchButton title="launch app" isVisible={isVisible} />
+        <LaunchButton
+          title="launch app"
+          isVisible={isVisible}
+          onClick={() => openLink("https://alpha.7007.studio")}
+        />
       </div>
       {/* <button
         className="z-50 rounded-full bg-gray-300 px-4 py-2 focus:outline-none dark:bg-amber-500"

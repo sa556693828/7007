@@ -108,6 +108,8 @@ const HomePageBox = ({ enable }) => {
                         boxA.color = p.random(colors);
                         boxA.sz = sz;
                         boxA.char = p.random(["AI MODEL", "AIGC NFT", "EIP-7007", "ON-CHAIN", "CREATOR", "TOKENS"]);
+                        // p.textSize(36);
+
                         boxes.push(boxA);
                         Matter.World.add(engine.world, boxA);
                     }

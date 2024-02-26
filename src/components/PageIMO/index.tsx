@@ -38,6 +38,7 @@ export default function IMO() {
   return (
     <>
       <div
+        id="imo"
         ref={ref}
         className="z-20 flex min-h-[100dvh] w-full flex-col items-center overflow-hidden bg-white pb-12 dark:bg-bgGrey lg:items-start lg:pl-[12%]"
         style={{ paddingTop: paddingTopValue }}

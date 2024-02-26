@@ -8,9 +8,10 @@ import HomePageBox from "@/components/AE/p5/HomePageBox";
 interface Props {
   content: string;
   darkMode: boolean;
+  openLink: (link: string) => void;
 }
 
-export default function LandingMobile({ content, darkMode }: Props) {
+export default function LandingMobile({ content, darkMode, openLink }: Props) {
   const [isVisible, setIsVisible] = useState(false);
   const [enableP5, setEnableP5] = useState(false);
 
@@ -57,6 +58,7 @@ export default function LandingMobile({ content, darkMode }: Props) {
             title="launch app"
             classname="w-fit"
             isVisible={isVisible}
+            onClick={() => openLink("https://alpha.7007.studio")}
           />
         </div>
       </div>

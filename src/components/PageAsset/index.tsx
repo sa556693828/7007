@@ -83,7 +83,7 @@ export default function Asset() {
     <>
       <div
         ref={ref}
-        id="asset"
+        id="Products"
         className="z-20 flex h-fit min-h-[100dvh] w-full flex-col items-start overflow-hidden bg-bgWhite pl-10 dark:bg-black lg:pl-[12%]"
         style={{ paddingTop: paddingTopValue }}
       >

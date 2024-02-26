@@ -3,11 +3,11 @@ export const socialLink = [
   { id: "X", link: "https://x.com/7007_studio?s=21&t=guauv9-D5cfkAcgT98UKWQ" },
 ];
 export const menuList = [
-  { id: "About", name: "About" },
-  { id: "Products", name: "Products" },
-  { id: "imo", name: "imo" },
-  { id: "Team", name: "Team" },
-  { id: "Partner", name: "Partner" },
+  { id: "#About", name: "About" },
+  { id: "#Products", name: "Products" },
+  // { id: "#imo", name: "imo" },
+  { id: "#Team", name: "Team" },
+  { id: "#Partner", name: "Partner" },
 ];
 export const footerList = [
   { id: "MarketPlace", name: "🚀 ai marketplace" },

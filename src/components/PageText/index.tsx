@@ -47,7 +47,7 @@ export default function Text() {
             alt="M_all"
             width={1080}
             height={457}
-            className={`w-4/5 transition-all duration-[800ms] lg:hidden ${isVisible ? "opacity-100" : "opacity-0"}`}
+            className={`w-4/5 transition-all duration-[800ms] md:w-[60%] lg:hidden ${isVisible ? "opacity-100" : "opacity-0"}`}
           />
         ) : (
           <Image
@@ -55,7 +55,7 @@ export default function Text() {
             alt="M_all_W"
             width={1080}
             height={457}
-            className={`w-4/5 transition-all duration-[800ms] lg:hidden ${isVisible ? "opacity-100" : "opacity-0"}`}
+            className={`w-4/5 transition-all duration-[800ms] md:w-[60%] lg:hidden ${isVisible ? "opacity-100" : "opacity-0"}`}
           />
         )}
 
@@ -65,7 +65,7 @@ export default function Text() {
             alt="all"
             width={1080}
             height={457}
-            className={`z-20 hidden w-[75%] transition-all duration-[800ms] lg:block ${isVisible ? "opacity-100" : "opacity-0"}`}
+            className={`z-20 hidden w-[75%] transition-all duration-[800ms] md:block ${isVisible ? "opacity-100" : "opacity-0"}`}
           />
         ) : (
           <Image
@@ -73,7 +73,7 @@ export default function Text() {
             alt="all"
             width={1080}
             height={457}
-            className={`z-20 hidden w-[75%] transition-all duration-[800ms] lg:block ${isVisible ? "opacity-100" : "opacity-0"}`}
+            className={`z-20 hidden transition-all duration-[800ms] lg:block lg:w-[65%] xl:w-[73%] ${isVisible ? "opacity-100" : "opacity-0"}`}
           />
         )}
         {/* <TextBox enable={true} /> */}

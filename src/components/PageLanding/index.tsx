@@ -7,13 +7,16 @@ import { NFTContext } from "../Provider";
 
 export default function Landing() {
   const { darkMode, toggleDarkMode } = useContext(NFTContext);
+  const openLink = (link: string) => {
+    window.open(link, "_blank");
+  };
 
   const text = `Revolutionizing AI\nwith transparent,\non-chain model publishing\nand creator compensation.`;
 
   return (
     <div className="relative overflow-hidden">
-      <LandingDesktop content={text} darkMode={darkMode} />
-      <LandingMobile content={text} darkMode={darkMode} />
+      <LandingDesktop content={text} darkMode={darkMode} openLink={openLink} />
+      <LandingMobile content={text} darkMode={darkMode} openLink={openLink} />
 
       {/* <img
         src={landing.src}

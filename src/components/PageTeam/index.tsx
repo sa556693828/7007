@@ -47,7 +47,7 @@ export default function Team() {
         className="z-20 flex h-full min-h-[100dvh] w-full bg-bgWhite px-10 pb-[8%] dark:bg-black lg:gap-[5%] lg:pl-[12%]"
         style={{ paddingTop: paddingTopValue }}
       >
-        <div className="flex w-full flex-col lg:w-fit lg:gap-[100px]">
+        <div className="flex w-full flex-col lg:w-fit lg:gap-[100px]" id="Team">
           <div className="flex flex-col gap-6 lg:gap-[45px]">
             <a
               className={`text-[45px] font-bold leading-none transition-all duration-[800ms] lg:max-w-full lg:text-[60px] ${isVisible ? "opacity-100" : "-translate-y-10 opacity-0"}`}
@@ -61,7 +61,7 @@ export default function Team() {
             />
           </div>
           <ShowMemberM selected={select} />
-          <div className="flex flex-col gap-[28px]">
+          <div className="flex flex-col gap-[28px]" id="Partner">
             <a
               className={`text-[45px] font-bold leading-none transition-all duration-[800ms] lg:max-w-full lg:text-[60px] ${isVisible ? "opacity-100" : "-translate-y-10 opacity-0"}`}
             >

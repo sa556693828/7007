@@ -6,6 +6,7 @@ import { menuList } from "@/constants/menuList";
 import Image from "next/image";
 import { FaTelegramPlane } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { useRouter } from "next/router";
 
 interface Props {
   urlPath: string;
@@ -20,6 +21,7 @@ export default function Desktop({
   socialLink,
   openLink,
 }: Props) {
+  const router = useRouter();
   const [hoverTG, setHoverTG] = useState(false);
   const [hoverX, setHoverX] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
@@ -54,7 +56,8 @@ export default function Desktop({
                 alt="title"
                 width={45}
                 height={89}
-                className={`${isVisible ? "opacity-100" : "opacity-0"} transition-all duration-1000`}
+                className={`${isVisible ? "opacity-100" : "opacity-0"} z-40 transition-all duration-1000`}
+                // onClick={() => route.replace("/")}
               />
             </>
           ) : (
@@ -67,16 +70,21 @@ export default function Desktop({
                 alt="title"
                 width={45}
                 height={89}
-                className={`${isVisible ? "opacity-100" : "opacity-0"} transition-all duration-1000`}
+                className={`${isVisible ? "opacity-100" : "opacity-0"} cursor-pointer transition-all duration-1000`}
+                onClick={() => router.push("/")}
               />
             </>
           )}
         </div>
         <div
-          className={`flex flex-col text-right transition-all duration-1000 ${isVisible ? "gap-[30px] opacity-100" : "gap-[10px] opacity-0"}`}
+          className={`z-50 flex flex-col text-right transition-all duration-1000 ${isVisible ? "gap-[30px] opacity-100" : "gap-[10px] opacity-0"}`}
         >
           {menuList.map((menu) => (
-            <a className="font-bold" key={menu.name}>
+            <a
+              className="z-50 cursor-pointer font-bold"
+              key={menu.name}
+              href={menu.id}
+            >
               {menu.name}
             </a>
           ))}
