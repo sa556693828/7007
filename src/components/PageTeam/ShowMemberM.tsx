@@ -69,3 +69,8 @@ export default function ShowMemberM({ selected }: Props) {
 // hover:bg-[#83F04F]
 // bg-[#83F04F]
 // text-[#83F04F]
+// border-[#E02B31]
+// hover:border-[#E02B31]
+// hover:bg-[#E02B31]
+// bg-[#E02B31]
+// text-[#E02B31]

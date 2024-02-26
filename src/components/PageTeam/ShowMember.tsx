@@ -33,12 +33,14 @@ export default function ShowMember({ selected, isVisible }: Props) {
             </a>
           </div>
         </div>
-        <div
-          className={`flex w-full items-center justify-center py-3 text-lg font-bold transition-all duration-[800ms] ${isVisible ? "opacity-100" : "-translate-x-10 opacity-0"}
+        <a
+          className={`flex w-full items-center justify-center py-3 text-lg font-bold transition-all duration-[800ms] hover:bg-[${team.find((member) => member.id === selected)?.color}] ${isVisible ? "opacity-100" : "-translate-x-10 opacity-0"}
       ${selected === "" ? "h-[121px] w-[121px] rounded-[50%] border-[8px] border-black" : `h-[60px] w-[240px] rounded-[65px] border-4 border-[${team.find((member) => member.id === selected)?.color}]`}`}
+          href={team.find((member) => member.id === selected)?.link}
+          target="_blank"
         >
-          {team.find((member) => member.id === selected)?.name.slice(3)}
-        </div>
+          {team.find((member) => member.id === selected)?.people}
+        </a>
       </div>
       <a
         className={`pt-5 leading-none transition-all duration-[800ms] ${isVisible ? "opacity-100" : "translate-x-10 opacity-0"} ${selected === "" ? "text-[160px]" : `text-[60px] text-[${team.find((member) => member.id === selected)?.color}]`}`}
@@ -83,3 +85,8 @@ export default function ShowMember({ selected, isVisible }: Props) {
 // hover:bg-[#83F04F]
 // bg-[#83F04F]
 // text-[#83F04F]
+// border-[#E02B31]
+// hover:border-[#E02B31]
+// hover:bg-[#E02B31]
+// bg-[#E02B31]
+// text-[#E02B31]
