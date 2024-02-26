@@ -16,7 +16,7 @@ export default function Home() {
         <title>7007</title>
       </Head>
       {/* <TextBox /> */}
-      {/* <Landing /> */}
+      <Landing />
       <Create />
       <Asset />
       <Text />
