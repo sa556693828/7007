@@ -27,6 +27,7 @@ export default function Text() {
       const scrollPosition = window.scrollY + window.innerHeight;
       const isHalf = scrollPosition >= componentHalf;
       const isBottom = scrollPosition >= componentBottom;
+      setEnableP5(isHalf);
       setIsVisible(isHalf);
       setIsBottom(isBottom);
     };
@@ -39,7 +40,7 @@ export default function Text() {
     <>
       <div
         ref={ref}
-        className="relative z-20 flex min-h-[100dvh] w-full flex-col items-center justify-center bg-white text-black dark:bg-bgWhite"
+        className="relative flex min-h-[100dvh] w-full flex-col items-center justify-center overflow-hidden bg-white text-black dark:bg-bgWhite"
       >
         {darkMode ? (
           <Image
@@ -47,7 +48,7 @@ export default function Text() {
             alt="M_all"
             width={1080}
             height={457}
-            className={`w-4/5 transition-all duration-[800ms] md:w-[60%] lg:hidden ${isVisible ? "opacity-100" : "opacity-0"}`}
+            className={`z-20 w-4/5 transition-all duration-[800ms] md:w-[60%] lg:hidden ${isVisible ? "opacity-100" : "opacity-0"}`}
           />
         ) : (
           <Image
@@ -55,7 +56,7 @@ export default function Text() {
             alt="M_all_W"
             width={1080}
             height={457}
-            className={`w-4/5 transition-all duration-[800ms] md:w-[60%] lg:hidden ${isVisible ? "opacity-100" : "opacity-0"}`}
+            className={`z-20 w-4/5 transition-all duration-[800ms] md:w-[60%] lg:hidden ${isVisible ? "opacity-100" : "opacity-0"}`}
           />
         )}
 
@@ -65,7 +66,7 @@ export default function Text() {
             alt="all"
             width={1080}
             height={457}
-            className={`z-20 hidden w-[75%] transition-all duration-[800ms] md:block ${isVisible ? "opacity-100" : "opacity-0"}`}
+            className={`pointer-events-none z-20 hidden w-[75%] transition-all duration-[800ms] md:block ${isVisible ? "opacity-100" : "opacity-0"}`}
           />
         ) : (
           <Image
@@ -73,10 +74,10 @@ export default function Text() {
             alt="all"
             width={1080}
             height={457}
-            className={`z-20 hidden transition-all duration-[800ms] lg:block lg:w-[65%] xl:w-[73%] ${isVisible ? "opacity-100" : "opacity-0"}`}
+            className={`pointer-events-none z-20 hidden transition-all duration-[800ms] lg:block lg:w-[65%] xl:w-[73%] ${isVisible ? "opacity-100" : "opacity-0"}`}
           />
         )}
-        {/* <TextBox enable={true} /> */}
+        <TextBox enable={true} />
       </div>
     </>
   );

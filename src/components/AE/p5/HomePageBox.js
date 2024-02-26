@@ -39,7 +39,7 @@ const HomePageBox = ({ enable }) => {
                             boxes = [];
                             // 重新创建引擎和鼠标约束
                             engine = Engine.create();
-                            let ground = Bodies.rectangle(p.width / 2, p.height + 31, p.width, 60, { isStatic: true });
+                            let ground = Bodies.rectangle(p.width / 2, p.height + 30 * allSize, p.width, 60 * allSize, { isStatic: true });
                             World.add(engine.world, ground);
                             var mouse = Mouse.create(sketchRef.current);
                             var mouseConstraint = MouseConstraint.create(engine, { mouse: mouse });
