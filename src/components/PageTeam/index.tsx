@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import eth from "@/assets/PageTeam/eth.svg";
-import hyper from "@/assets/PageTeam/hyper.svg";
+import hyper from "@/assets/PageTeam/hyper_W.svg";
 import story from "@/assets/PageTeam/story.svg";
 import stratos from "@/assets/PageTeam/stratos.svg";
 import eth_W from "@/assets/PageTeam/eth_W.svg";
