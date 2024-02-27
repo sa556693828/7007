@@ -112,7 +112,7 @@ const HomePageBox = ({ enable }) => {
                         // p.textSize(36);
 
                         boxes.push(boxA);
-                        Matter.World.add(engine.world, boxA); 會會
+                        Matter.World.add(engine.world, boxA);
                     }
                 };
                 new p5(sketch);
