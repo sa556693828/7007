@@ -16,7 +16,7 @@ export default function Mobile({ urlPath }: Props) {
             key={index}
             className="cursor-pointer text-2xl font-normal uppercase leading-[150%]"
             href={item.link}
-            target="_blank"
+            target={item.link.startsWith("#") ? "" : "_blank"}
           >
             {item.name}
           </a>
