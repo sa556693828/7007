@@ -1,22 +1,22 @@
-import React, { useContext, useState } from "react";
+import React from "react";
 import Image from "next/image";
 import M_black from "@/assets/Footer/M_black.svg";
-import { footerList, menuList } from "@/constants/menuList";
+import { footerList } from "@/constants/menuList";
 
 interface Props {
   urlPath?: string;
 }
 
 export default function Mobile({ urlPath }: Props) {
-  const [showMenu, setShowMenu] = useState(false);
-
   return (
     <div className="flex w-full flex-col gap-[60px] px-[40px] pb-[146px] pt-[90px] text-black lg:hidden">
       <div className="flex flex-col gap-[18px]">
         {footerList.map((item, index) => (
           <a
             key={index}
-            className="text-2xl font-normal uppercase leading-[150%]"
+            className="cursor-pointer text-2xl font-normal uppercase leading-[150%]"
+            href={item.link}
+            target="_blank"
           >
             {item.name}
           </a>

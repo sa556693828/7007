@@ -72,8 +72,9 @@ export default function Mobile({ darkMode, socialLink, openLink }: Props) {
               {footerList.map((item, index) => (
                 <a
                   key={index}
-                  className={`text-2xl uppercase leading-[150%] transition-all delay-700 duration-[800ms] ${showMenu ? "opacity-100" : "-translate-y-5 opacity-0"}`}
-                  // href={item.id}
+                  className={`cursor-pointer text-2xl uppercase leading-[150%] transition-all delay-700 duration-[800ms] ${showMenu ? "opacity-100" : "-translate-y-5 opacity-0"}`}
+                  href={item.link}
+                  target="_blank"
                 >
                   {item.name}
                 </a>

@@ -10,14 +10,30 @@ export const menuList = [
   { id: "#Partner", name: "Partner" },
 ];
 export const footerList = [
-  { id: "LaunchApp", name: "🚀 launch app" },
-  { id: "X", name: "🌏 x" },
-  { id: "Telegram", name: "👾 Telegram" },
-  { id: "Contact", name: "🗿 contact" },
-  { id: "Contract", name: "⛽ smart contract" },
+  {
+    id: "LaunchApp",
+    name: "🚀 launch app",
+    link: "https://alpha.7007.studio",
+  },
+  {
+    id: "X",
+    name: "🌏 x",
+    link: "https://x.com/7007_studio?s=21&t=guauv9-D5cfkAcgT98UKWQ",
+  },
+  {
+    id: "Telegram",
+    name: "👾 Telegram",
+    link: "https://t.me/+wUoA1zKgUBIzYzJl",
+  },
+  {
+    id: "Contact",
+    name: "🗿 contact",
+    link: "https://8ksjs0r1jhj.typeform.com/to/j2EGDUJC",
+  },
+  // { id: "Contract", name: "⛽ smart contract" },
   // { id: "whitePaper", name: "🩻 white paper" },
-  { id: "About", name: "🐳 about" },
-  { id: "Products", name: "🌵 products" },
+  // { id: "About", name: "🐳 about" },
+  // { id: "Products", name: "🌵 products" },
   // { id: "IMO", name: "⛲ imo" },
 ];
 export const teamMember = [
