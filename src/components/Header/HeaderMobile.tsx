@@ -86,7 +86,7 @@ export default function Mobile({ darkMode, socialLink, openLink }: Props) {
       <div className="fixed bottom-[50px] right-5 z-50 flex w-full justify-end md:hidden">
         <div className="z-50 flex flex-col gap-[18px] text-right">
           <div
-            className={`flex h-[45px] w-[45px] cursor-pointer items-center justify-center rounded-full border pt-[2px] duration-1000 ${isVisible ? "opacity-100" : "scale-50 opacity-0"} ${hoverTG ? "border-buttonGr shadow-buttonG" : "border-white"} bg-black transition-all`}
+            className={`flex h-[45px] w-[45px] cursor-pointer items-center justify-center rounded-full border pt-[2px] delay-100 duration-[1200ms] ${isVisible ? "opacity-100" : "scale-50 opacity-0"} ${hoverTG ? "border-buttonGr shadow-buttonG" : "border-white"} bg-black transition-all`}
             onMouseEnter={() => setHoverTG(true)}
             onMouseLeave={() => setHoverTG(false)}
             onClick={() => openLink(socialLink[0].link)}
@@ -94,7 +94,7 @@ export default function Mobile({ darkMode, socialLink, openLink }: Props) {
             <FaTelegramPlane size={23} color={hoverTG ? "#B4FF78" : "white"} />
           </div>
           <div
-            className={`flex h-[45px] w-[45px] cursor-pointer items-center justify-center rounded-full duration-1000 ${isVisible ? "opacity-100" : "scale-50 opacity-0"} ${hoverX ? "bg-buttonGr shadow-buttonG" : "border border-white bg-white"} transition-all`}
+            className={`flex h-[45px] w-[45px] cursor-pointer items-center justify-center rounded-full delay-100 duration-[1200ms] ${isVisible ? "opacity-100" : "scale-50 opacity-0"} ${hoverX ? "bg-buttonGr shadow-buttonG" : "border border-white bg-white"} transition-all`}
             onMouseEnter={() => setHoverX(true)}
             onMouseLeave={() => setHoverX(false)}
             onClick={() => openLink(socialLink[1].link)}

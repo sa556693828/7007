@@ -32,10 +32,10 @@ export default function LandingDesktop({ content, darkMode, openLink }: Props) {
         {darkMode ? (
           <>
             <div
-              className={`absolute left-0 z-50 h-[128px] bg-black transition-[width] duration-1000 ${isVisible ? "w-[0px]" : "w-[536px]"}`}
+              className={`absolute left-0 z-50 h-[128px] bg-black transition-[width] duration-[1200ms] ${isVisible ? "w-[0px]" : "w-[536px]"}`}
             />
             <div
-              className={`absolute right-0 z-50 w-[40px] bg-black transition-[height] duration-1000 ${isVisible ? "h-[0px]" : "h-[128px]"}`}
+              className={`absolute right-0 z-50 w-[40px] bg-black transition-[height] duration-[1200ms] ${isVisible ? "h-[0px]" : "h-[128px]"}`}
             />
             <Image
               src={title.src}
@@ -43,16 +43,16 @@ export default function LandingDesktop({ content, darkMode, openLink }: Props) {
               width={576}
               height={128}
               priority={true}
-              className={`${isVisible ? "opacity-100" : "opacity-0"}  transition-all duration-1000`}
+              className={`${isVisible ? "opacity-100" : "opacity-0"}  transition-all duration-[1200ms]`}
             />
           </>
         ) : (
           <>
             <div
-              className={`absolute left-0 z-50 h-[128px] bg-bgWhite transition-[width] duration-1000 ${isVisible ? "w-[0px]" : "w-[536px]"}`}
+              className={`absolute left-0 z-50 h-[128px] bg-bgWhite transition-[width] duration-[1200ms] ${isVisible ? "w-[0px]" : "w-[536px]"}`}
             />
             <div
-              className={`absolute right-0 z-50 w-[40px] bg-bgWhite transition-[height] duration-1000 ${isVisible ? "h-[0px]" : "h-[128px]"}`}
+              className={`absolute right-0 z-50 w-[40px] bg-bgWhite transition-[height] duration-[1200ms] ${isVisible ? "h-[0px]" : "h-[128px]"}`}
             />
             <Image
               src={title_W.src}
@@ -60,14 +60,14 @@ export default function LandingDesktop({ content, darkMode, openLink }: Props) {
               width={576}
               height={128}
               priority={true}
-              className={`${isVisible ? "opacity-100" : "opacity-0"}  transition-all duration-1000`}
+              className={`${isVisible ? "opacity-100" : "opacity-0"}  transition-all duration-[1200ms]`}
             />
           </>
         )}
       </div>
       <div className="flex flex-row items-end justify-between gap-6">
         <a
-          className={`max-w-lg whitespace-pre font-normal leading-6 transition-all duration-1000 ${isVisible ? "opacity-100" : "translate-x-10 opacity-0"} pointer-events-none z-20`}
+          className={`max-w-lg whitespace-pre font-normal leading-6 transition-all duration-[1200ms] ${isVisible ? "opacity-100" : "translate-x-10 opacity-0"} pointer-events-none z-20`}
         >
           {content}
         </a>

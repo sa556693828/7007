@@ -30,27 +30,27 @@ export default function LandingMobile({ content, darkMode, openLink }: Props) {
         {darkMode ? (
           <div className="relative">
             <div
-              className={`absolute left-0 z-50 h-[51px] bg-black transition-[width] duration-1000 ${isVisible ? "w-[0px]" : "w-[236px]"}`}
+              className={`absolute left-0 z-50 h-[51px] bg-black transition-[width] duration-[1200ms] ${isVisible ? "w-[0px]" : "w-[236px]"}`}
             />
             <div
-              className={`absolute right-0 z-50 w-[10px] bg-black transition-[height] duration-1000 ${isVisible ? "h-[0px]" : "h-[51px]"}`}
+              className={`absolute right-0 z-50 w-[10px] bg-black transition-[height] duration-[1200ms] ${isVisible ? "h-[0px]" : "h-[51px]"}`}
             />
             <Image src={title.src} alt="title" width={246} height={51} />
           </div>
         ) : (
           <div className="relative">
             <div
-              className={`absolute left-0 z-50 h-[51px] bg-bgWhite transition-[width] duration-1000 ${isVisible ? "w-[0px]" : "w-[236px]"}`}
+              className={`absolute left-0 z-50 h-[51px] bg-bgWhite transition-[width] duration-[1200ms] ${isVisible ? "w-[0px]" : "w-[236px]"}`}
             />
             <div
-              className={`absolute right-0 z-50 w-[10px] bg-bgWhite transition-[height] duration-1000 ${isVisible ? "h-[0px]" : "h-[51px]"}`}
+              className={`absolute right-0 z-50 w-[10px] bg-bgWhite transition-[height] duration-[1200ms] ${isVisible ? "h-[0px]" : "h-[51px]"}`}
             />
             <Image src={title_W.src} alt="title" width={246} height={51} />
           </div>
         )}
         <div className="z-20 flex flex-col gap-6">
           <a
-            className={`max-w-[248px] whitespace-pre text-xs font-normal leading-[150%] transition-all duration-1000 ${isVisible ? "opacity-100" : "translate-x-10 opacity-0"} pointer-events-none`}
+            className={`max-w-[248px] whitespace-pre text-xs font-normal leading-[150%] transition-all duration-[1200ms] ${isVisible ? "opacity-100" : "translate-x-10 opacity-0"} pointer-events-none`}
           >
             {content}
           </a>
