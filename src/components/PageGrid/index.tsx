@@ -1,27 +1,33 @@
-import React from "react";
-import M_small from "@/assets/PageGrid/M_small.svg";
-import small from "@/assets/PageGrid/small.svg";
-import Image from "next/image";
+import React, { useEffect, useRef, useState } from "react";
+import Desktop from "./Desktop";
+import Mobile from "./Mobile";
 
 export default function Grid() {
+  const ref = useRef<any>();
+  const animation = "transition-all ease-grid duration-[800ms]";
+  const [isBottom, setIsBottom] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const component = ref.current;
+    const handleScroll = () => {
+      if (!component) return;
+      const componentBottom = component.offsetTop + component.clientHeight;
+      const componentHalf = component.offsetTop + component.clientHeight / 1.1;
+      const scrollPosition = window.scrollY + window.innerHeight;
+      const isHalf = scrollPosition >= componentHalf;
+      setIsVisible(isHalf);
+      // setIsBottom(componentHalfMobile);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
-    <>
-      <div className="z-20 flex min-h-fit w-full flex-col items-center justify-center">
-        <Image
-          src={small}
-          alt="small"
-          width={1440}
-          height={900}
-          className="hidden h-full w-full object-contain lg:block"
-        />
-        <Image
-          src={M_small}
-          alt="M_small"
-          width={1440}
-          height={900}
-          className="block h-full w-full object-contain lg:hidden"
-        />
-      </div>
-    </>
+    <div ref={ref}>
+      <Desktop isVisible={isVisible} animation={animation} />
+      <Mobile isVisible={isVisible} animation={animation} />
+    </div>
   );
 }

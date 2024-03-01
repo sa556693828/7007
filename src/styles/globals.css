@@ -27,3 +27,15 @@ img {
   background: radial-gradient(50% 50% at 50% 50%, rgba(180, 255, 120, 0.00) 0%, #B4FF78 100%);  
 }
 
+.triangle {
+  border-top: 20vh solid transparent;
+  border-left: 12.2vw solid black;
+  border-right: 12.2vw solid transparent;
+  border-bottom: 20vh solid black;
+}
+.triangleM {
+  border-top: 7vh solid transparent;
+  border-left: 25vw solid black;
+  border-right: 25vw solid transparent;
+  border-bottom: 7vh solid black;
+}

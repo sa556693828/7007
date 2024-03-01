@@ -17,6 +17,9 @@ module.exports = {
         bgBlue: "#2B8BFC",
         buttonGr: "#B4FF78",
       },
+      height: {
+        border: "calc(34% - 6px)"
+      },
       fontFamily: {
         digital: ["Digital Numbers", "sans-serif"],
       },
@@ -31,6 +34,9 @@ module.exports = {
         buttonW: "0px 0px 10px 0px #FFF",
         buttonG: "0px 0px 10px 0px #B4FF78",
       },
+      transitionTimingFunction: {
+        "grid": "cubic-bezier(.49,1.54,.6,.87)"
+      }
     }
   },
   plugins: [],
