@@ -143,9 +143,7 @@ export default function Desktop({ urlPath }: Props) {
         ))} */}
       </div>
       <div className="flex flex-col gap-[18px]"></div>
-      <a className="flex text-lg font-bold">
-        7007.Studio © All rights reserved.
-      </a>
+      <a className="flex text-lg font-bold">Lab7007 © All rights reserved.</a>
     </div>
   );
 }

@@ -22,9 +22,7 @@ export default function Mobile({ urlPath }: Props) {
           </a>
         ))}
       </div>
-      <a className="flex text-xs font-bold">
-        7007.Studio © All rights reserved.
-      </a>
+      <a className="flex text-xs font-bold">Lab7007 © All rights reserved.</a>
       <Image
         src={M_black}
         alt="black"

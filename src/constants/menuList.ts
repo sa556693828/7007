@@ -32,12 +32,16 @@ export const footerList = [
     name: "🗿 contact",
     link: "https://8ksjs0r1jhj.typeform.com/to/j2EGDUJC",
   },
+  // {
+  //   id: "Contract",
+  //   name: "⛽ smart contract",
+  //   link: "https://eips.ethereum.org/EIPS/eip-7007",
+  // },
   {
-    id: "Contract",
-    name: "⛽ smart contract",
-    link: "https://eips.ethereum.org/EIPS/eip-7007",
+    id: "whitePaper",
+    name: "🩻 white paper",
+    link: "https://lime-eastern-reptile-334.mypinata.cloud/ipfs/QmRKhEafXkJTWCb7As3wRotZriemqpnT3HSgpaB9aPgiHw",
   },
-  // { id: "whitePaper", name: "🩻 white paper" },
   // { id: "IMO", name: "⛲ imo" },
 ];
 export const teamMember = [
