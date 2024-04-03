@@ -40,7 +40,7 @@ export const footerList = [
   {
     id: "whitePaper",
     name: "🩻 white paper",
-    link: "https://lime-eastern-reptile-334.mypinata.cloud/ipfs/QmRKhEafXkJTWCb7As3wRotZriemqpnT3HSgpaB9aPgiHw",
+    link: "https://ipfs.io/ipfs/QmdqJZRqBSpBd2YyeEPUntAXTDDH91zv9uykr2sDtyWC15",
   },
   // { id: "IMO", name: "⛲ imo" },
 ];
