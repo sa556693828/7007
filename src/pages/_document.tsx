@@ -21,7 +21,7 @@ export default function Document() {
         <meta property="og:site_name" content="7007" />
         <meta
           property="og:description"
-          content="Revolutionizing AI with transparent,on-chain model publishing and creator compensation."
+          content="trustless standard for AI NFTs and Inference assets on Ethereum."
         />
         <meta property="og:url" content="https://www.7007.studio/main.png" />
         <meta property="og:type" content="website" />
@@ -32,7 +32,7 @@ export default function Document() {
         <meta name="twitter:title" content="7007 Studio" />
         <meta
           name="twitter:description"
-          content="Revolutionizing AI with transparent,on-chain model publishing and creator compensation."
+          content="trustless standard for AI NFTs and Inference assets on Ethereum."
         />
         <meta name="twitter:image" content="https://www.7007.studio/main.png" />
       </Head>

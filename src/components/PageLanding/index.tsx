@@ -11,7 +11,7 @@ export default function Landing() {
     window.open(link, "_blank");
   };
 
-  const text = `Revolutionizing AI\nwith transparent,\non-chain model publishing\nand creator compensation.`;
+  const text = `trustless standard for AI NFTs\nand Inference assets\non Ethereum.`;
 
   return (
     <div className="relative overflow-hidden">

@@ -17,7 +17,7 @@ export default function Sign() {
   const { darkMode } = useContext(NFTContext);
 
   const title = `Be part\nof AIGC\nRevolution`;
-  const content = `Revolutionizing AI\nwith transparent,\non-chain model publishing\nand creator compensation.`;
+  const content = `trustless standard for AI NFTs\nand Inference assets\non Ethereum.`;
   const paddingTopValue = `calc(100vh * 0.18)`;
   const ref = useRef<any>();
 
