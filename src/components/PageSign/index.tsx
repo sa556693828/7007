@@ -4,7 +4,7 @@ import img from "@/assets/PageSign/7007img.svg";
 import img_W from "@/assets/PageSign/7007img_W.svg";
 import ai from "@/assets/PageSign/ai.svg";
 import art from "@/assets/PageSign/art.svg";
-import creat from "@/assets/PageSign/creat.svg";
+import creat from "@/assets/PageSign/create.svg";
 import idea from "@/assets/PageSign/idea.svg";
 import model from "@/assets/PageSign/model.svg";
 import NFT from "@/assets/PageSign/NFT.svg";

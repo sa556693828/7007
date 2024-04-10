@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import M_createFull from "@/assets/PageCreate/M_createFull.svg";
 import ai from "@/assets/PageCreate/ai.svg";
 import art from "@/assets/PageCreate/art.svg";
-import creat from "@/assets/PageCreate/creat.svg";
+import creat from "@/assets/PageCreate/create.svg";
 import idea from "@/assets/PageCreate/idea.svg";
 import model from "@/assets/PageCreate/model.svg";
 import NFT from "@/assets/PageCreate/NFT.svg";
