@@ -8,14 +8,14 @@ import color from "@/assets/PageAsset/color.svg";
 
 export default function Asset() {
   const ref = useRef<any>();
-  const title = `New asset\nclass : AI Models`;
+  const title = `Inference asset`;
   const titleList = [
     `New asset\nclass : AI Models`,
     `New asset\nclass :\nAIGC NFT`,
     `New asset\nclass :\nEIP-7007`,
     // Add more titles as needed
   ];
-  const mobileTitle = `New asset\nclass :\nAI Models`;
+  const mobileTitle = `Inference asset`;
   const paddingTopValue = `calc(100vh * 0.18)`;
 
   const [isBottom, setIsBottom] = useState(false);
@@ -99,7 +99,7 @@ export default function Asset() {
             {mobileTitle}
           </a>
           <LaunchButton
-            classname="hidden lg:flex min-w-[185px]"
+            classname="hidden lg:flex min-w-[185px] ml-10"
             title="CONTACT US"
             isVisible={isVisible}
             onClick={() => {

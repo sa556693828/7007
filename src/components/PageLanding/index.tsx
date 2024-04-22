@@ -11,7 +11,7 @@ export default function Landing() {
     window.open(link, "_blank");
   };
 
-  const text = `trustless standard for AI NFTs`;
+  const text = `AI Inference asset protocol`;
 
   return (
     <div className="relative overflow-hidden">

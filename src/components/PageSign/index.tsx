@@ -16,8 +16,8 @@ import { NFTContext } from "../Provider";
 export default function Sign() {
   const { darkMode } = useContext(NFTContext);
 
-  const title = `Be part\nof AIGC\nRevolution`;
-  const content = `trustless standard for AI NFTs\nand Inference assets\non Ethereum.`;
+  const title = `Be part\nof NFI\nRevolution`;
+  const content = `AI inference asset protocol on Ethereum`;
   const paddingTopValue = `calc(100vh * 0.18)`;
   const ref = useRef<any>();
 
@@ -45,7 +45,7 @@ export default function Sign() {
   return (
     <div
       ref={ref}
-      className="z-20 flex h-full min-h-[100dvh] w-full flex-col items-center gap-[5%] overflow-hidden bg-white pb-[8%] dark:bg-bgGrey lg:min-h-[100dvh] lg:flex-row lg:items-start lg:pl-[12%]"
+      className="z-20 flex h-full min-h-[100dvh] w-full flex-col items-center gap-[5%] overflow-hidden bg-white pb-[8%] dark:bg-bgGrey lg:min-h-full lg:flex-row lg:items-start lg:pl-[12%]"
       style={{ paddingTop: paddingTopValue }}
     >
       <div className="flex flex-col gap-6 whitespace-pre-wrap">
@@ -82,7 +82,7 @@ export default function Sign() {
         />
       ) : (
         <Image
-          src={img_W}
+          src={img}
           alt="img"
           width={546}
           height={546}

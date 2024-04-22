@@ -49,10 +49,7 @@ export default function LandingDesktop({ content, darkMode, openLink }: Props) {
         ) : (
           <>
             <div
-              className={`absolute left-0 z-50 h-[128px] bg-bgWhite transition-[width] duration-[1200ms] ${isVisible ? "w-[0px]" : "w-[536px]"}`}
-            />
-            <div
-              className={`absolute right-0 z-50 w-[40px] bg-bgWhite transition-[height] duration-[1200ms] ${isVisible ? "h-[0px]" : "h-[128px]"}`}
+              className={`absolute left-0 z-50 h-[128px] bg-bgWhite transition-[width] duration-[1200ms] ${isVisible ? "w-[0px]" : "w-[576px]"}`}
             />
             <Image
               src={title_W.src}

@@ -12,7 +12,7 @@ import Image from "next/image";
 import AnimateImg from "../AE/AnimateImg";
 
 export default function Create() {
-  const title = `creator centric`;
+  const title = `Inference asset`;
   const content = `ai model + aigc nft = 7007`;
   const ref = useRef<any>();
   const [isScrolledToBottom, setIsScrolledToBottom] = useState(false);

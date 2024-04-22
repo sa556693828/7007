@@ -73,7 +73,7 @@ export default function Desktop({ isVisible, animation }: Props) {
           <a
             className={`text-[50px] font-bold text-white ${animation} ${isVisible ? "opacity-100" : "-translate-y-10 opacity-0"}`}
           >
-            WHen
+            WHEN
           </a>
         </div>
         <div className="relative size-full h-full overflow-x-clip bg-bgBlue">
@@ -190,7 +190,7 @@ export default function Desktop({ isVisible, animation }: Props) {
             />
             <a
               className={`absolute bottom-[30%] right-0 text-right text-[50px] font-bold leading-tight text-white ${animation} ${isVisible ? "opacity-100" : "-translate-x-full opacity-0"}`}
-            >{`con\ntent`}</a>
+            >{`content`}</a>
           </div>
         </div>
       </div>

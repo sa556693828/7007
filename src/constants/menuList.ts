@@ -40,7 +40,7 @@ export const footerList = [
   {
     id: "whitePaper",
     name: "🩻 white paper",
-    link: "https://ipfs.io/ipfs/QmdqJZRqBSpBd2YyeEPUntAXTDDH91zv9uykr2sDtyWC15",
+    link: "https://ipfs.io/ipfs/QmfGTSkZmohXTNR825HaSeXDGoiiv4Ab9D8JN5sUy1xKAL",
   },
   // { id: "IMO", name: "⛲ imo" },
 ];
