@@ -13,7 +13,7 @@ import AnimateImg from "../AE/AnimateImg";
 
 export default function Create() {
   const title = `Inference asset`;
-  const content = `ai model + aigc nfi = 7007`;
+  const content = `Non fungible inferences = 7007`;
   const ref = useRef<any>();
   const [isScrolledToBottom, setIsScrolledToBottom] = useState(false);
   const imgArray = [
