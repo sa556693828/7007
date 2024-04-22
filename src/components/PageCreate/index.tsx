@@ -13,7 +13,7 @@ import AnimateImg from "../AE/AnimateImg";
 
 export default function Create() {
   const title = `Inference asset`;
-  const content = `ai model + aigc nft = 7007`;
+  const content = `ai model + aigc nfi = 7007`;
   const ref = useRef<any>();
   const [isScrolledToBottom, setIsScrolledToBottom] = useState(false);
   const imgArray = [
@@ -168,7 +168,7 @@ export default function Create() {
       <div
         className={`flex w-full flex-col items-center justify-center transition-all duration-[800ms] ${isScrolledToBottom ? "opacity-100" : "opacity-0"}`}
       >
-        <a className="max-w-xs text-center text-[45px] font-bold lg:max-w-full lg:text-[60px]">
+        <a className="max-w-xs text-center text-[30px] font-bold lg:max-w-full lg:text-[60px]">
           {title}
         </a>
         <a className="text-xs font-bold uppercase leading-[200%] lg:text-2xl lg:leading-normal">
