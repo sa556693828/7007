@@ -16,7 +16,7 @@ import { NFTContext } from "../Provider";
 export default function Sign() {
   const { darkMode } = useContext(NFTContext);
 
-  const title = `Be part\nof NFI\nRevolution`;
+  const title = `Be part\nof AI\nRevolution`;
   const content = `AI inference asset protocol on Ethereum`;
   const paddingTopValue = `calc(100vh * 0.18)`;
   const ref = useRef<any>();
