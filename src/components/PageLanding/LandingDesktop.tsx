@@ -71,7 +71,7 @@ export default function LandingDesktop({ content, darkMode, openLink }: Props) {
         <LaunchButton
           title="launch app"
           isVisible={isVisible}
-          onClick={() => openLink("https://dev.7007.ai/")}
+          onClick={() => openLink("https://alpha.7007.studio/")}
         />
       </div>
       {/* <button
