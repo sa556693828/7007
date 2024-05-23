@@ -58,7 +58,7 @@ export default function LandingMobile({ content, darkMode, openLink }: Props) {
             title="launch app"
             classname="w-fit"
             isVisible={isVisible}
-            onClick={() => openLink("https://alpha.7007.studio/")}
+            onClick={() => openLink("https://app.7007.ai/")}
           />
         </div>
       </div>
