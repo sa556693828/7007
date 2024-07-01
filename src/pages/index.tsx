@@ -22,7 +22,7 @@ export default function Home() {
       <Text />
       <Grid />
       {/* <IMO /> */}
-      <Team />
+      {/* <Team /> */}
       <Sign />
     </>
   );

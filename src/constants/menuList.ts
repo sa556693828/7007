@@ -6,7 +6,7 @@ export const menuList = [
   { id: "#About", name: "About" },
   { id: "#Products", name: "Products" },
   // { id: "#imo", name: "imo" },
-  { id: "#Team", name: "Team" },
+  // { id: "#Team", name: "Team" },
   { id: "#Partner", name: "Partner" },
 ];
 export const footerList = [
